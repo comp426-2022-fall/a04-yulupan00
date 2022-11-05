@@ -1,4 +1,4 @@
-import {roll} from "./lib/roll.js";
+import {roll} from "lib/lib/roll.js";
 
 const express = require('express');
 const app = express()
