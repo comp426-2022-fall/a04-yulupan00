@@ -18,14 +18,12 @@ var rolls = 1;
 
 app.get('/app/roll/', (req,res,next) => {
     res.send(roll(sides, dice, rolls));
-    console.log('x');
     res.end();
 })
   
 app.get('/app/roll/:sides', (req, res, next) => {
     sides = parseInt(req.params.sides);
     res.send(roll(sides, dice, rolls));
-    console.log('y');
     res.end();
 })
 
@@ -33,7 +31,6 @@ app.get('/app/roll/:sides/:dice/', (req, res, next) => {
     sides = parseInt(req.params.sides);
     dice = parseInt(req.params.dice);
     res.send(roll(sides, dice, rolls));
-    console.log('z');
     res.end();
 })
 
@@ -42,7 +39,6 @@ app.get('/app/roll/:sides/:dice/:rolls', (req,res,next) => {
     dice = parseInt(req.params.dice);
     rolls = parseInt(req.params.rolls);
     res.send(roll(sides, dice, rolls));
-    console.log('ss');
     res.end();
 })
 
@@ -51,7 +47,6 @@ app.use('/app/roll/', (req,res,next) => {
     dice = req.params.dice? parseInt(req.params.dice): dice;
     rolls = req.params.rolls? parseInt(req.params.rolls): rolls;
     res.send(roll(sides, dice, rolls));
-    console.log('q');
     res.end();
 })
 
